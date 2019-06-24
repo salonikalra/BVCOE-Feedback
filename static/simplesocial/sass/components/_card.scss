@@ -1,0 +1,43 @@
+.feedback__card{
+  background-color: rgba($color-white, .8);
+  margin: 0 auto;
+  display: inline-block;
+  width: 25rem;
+  min-height: 30rem;
+  text-align: center;
+  padding: 3rem;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+  display: grid;
+  grid-template-rows: repeat(4, min-content);
+  transition: all .4s;
+
+  &:hover{
+    box-shadow: 0 2.5rem 15rem rgba($color-black, .2);
+    transform: translateY(-3px) scale(1.05);
+  }
+
+  &-heading{
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  a{
+    text-decoration: none;
+    font-size: inherit;
+    color: inherit;
+  }
+
+  &-average{
+    font-size: 7rem;
+    font-weight: 100;
+    line-height: 1.7;
+    color: $color-medium;
+  }
+
+  &-time{
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+}

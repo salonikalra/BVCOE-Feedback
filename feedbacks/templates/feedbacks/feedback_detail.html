@@ -1,0 +1,82 @@
+{% extends "feedbacks/feedback_base.html" %}
+{% load verbose_names %}
+
+{% block feedback_content %}
+
+<div class="detail">
+  <div class="heading-tertiary">
+    {{ feedback.created_at }}
+  </div>
+
+  <div class="heading-tertiary">
+    {% get_verbose_field_name feedback "teacher" %} : {{feedback.teacher}}
+  </div>
+
+  <div class="heading-tertiary">
+    {% get_verbose_field_name feedback "subject" %} : {{feedback.subject}}
+  </div>
+
+  <div class="heading-tertiary">
+    {% get_verbose_field_name feedback "total" %} : {{feedback.total}}/50
+  </div>
+
+  <div class="heading-tertiary margin-bottom-small">
+    {% get_verbose_field_name feedback "average" %} : {{feedback.average}}/5.0
+  </div>
+
+  <div class="detail__param">
+    {% get_verbose_field_name feedback "param1" %}
+    <span>{{feedback.param1}}</span>
+  </div>
+
+  <div class="detail__param">
+    {% get_verbose_field_name feedback "param2" %}
+    <span>{{feedback.param2}}</span>
+  </div>
+
+  <div class="detail__param">
+    {% get_verbose_field_name feedback "param3" %}
+    <span>{{feedback.param3}}</span>
+  </div>
+
+  <div class="detail__param">
+    {% get_verbose_field_name feedback "param4" %}
+    <span>{{feedback.param4}}</span>
+  </div>
+
+  <div class="detail__param">
+    {% get_verbose_field_name feedback "param5" %}
+    <span>{{feedback.param5}}</span>
+  </div>
+
+  <div class="detail__param">
+    {% get_verbose_field_name feedback "param6" %}
+    <span>{{feedback.param6}}</span>
+  </div>
+
+  <div class="detail__param">
+    {% get_verbose_field_name feedback "param7" %}
+    <span>{{feedback.param7}}</span>
+  </div>
+
+  <div class="detail__param">
+    {% get_verbose_field_name feedback "param8" %}
+    <span>{{feedback.param8}}</span>
+  </div>
+
+  <div class="detail__param">
+    {% get_verbose_field_name feedback "param9" %}
+    <span>{{feedback.param9}}</span>
+  </div>
+
+  <div class="detail__param">
+    {% get_verbose_field_name feedback "param10" %}
+    <span>{{feedback.param10}}</span>
+  </div>
+
+  <div class="detail__message">
+    {% if feedback.message %}Message : {{feedback.message}}{% endif %}
+  </div>
+</div>
+
+{% endblock %}

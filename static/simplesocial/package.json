@@ -1,0 +1,22 @@
+{
+  "name": "simplesocial",
+  "version": "1.0.0",
+  "description": "feedback app",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/master.css -w",
+
+    "compile:sass": "node-sass sass/main.scss css/master.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/master.comp.css -o css/master.prefix.css",
+    "compress:css": "node-sass css/master.prefix.css css/master.css --output-master compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "author": "Saloni Kalra",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.1.4",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.1.1",
+    "postcss-cli": "^4.1.1"
+  }
+}

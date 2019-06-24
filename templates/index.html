@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<header class="header">
+        <div class="header__logo-box">
+            <img src="static/simplesocial/img/logo-white.png" alt="Logo" class="header__logo">
+        </div>
+
+        <div class="header__text-box">
+            <h1 class="heading-primary margin-bottom-huge">
+                <span class="heading-primary--main">BVCOE Feedback</span>
+                <span class="heading-primary--sub">We value you too</span>
+            </h1>
+
+            <a href="{% url 'feedbacks:create' %}" class="btn btn--white btn--animated">Give feedback now!</a>
+        </div>
+    </header>
+
+{% endblock %}

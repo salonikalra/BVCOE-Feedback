@@ -1,0 +1,16 @@
+<div class="feedback__card">
+
+  <div class="feedback__card-average">
+    <a  href="{% url 'feedbacks:single' username=feedback.student.user.username pk=feedback.pk %}">{{feedback.average}}</a>
+  </div>
+
+  <div class="feedback__card-heading">
+    <a  href="{% url 'feedbacks:single' username=feedback.student.user.username pk=feedback.pk %}">
+                      {{ feedback.teacher.teacher_name }} : {{ feedback.subject.subject_code }}</a>
+  </div>
+
+  <div class="feedback__card-time">
+    <a  href="{% url 'feedbacks:single' username=feedback.student.user.username pk=feedback.pk %}">{{ feedback.created_at }}</a>
+  </div>
+
+</div>

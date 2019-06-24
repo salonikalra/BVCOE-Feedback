@@ -1,0 +1,18 @@
+{% extends "feedbacks/feedback_base.html" %}
+
+	{% block feedback_content %}
+	<div class="list">
+		<div class="list__heading">
+			<h1 class="heading-secondary">{{ feedback_user.username }}</h1>
+			<h2 class="heading-tertiary margin-bottom-large">feedback history</h2>
+		</div>
+
+		<div class="skew-color">
+			<div class="container">
+				{% for feedback in feedback_list %}
+					{% include "feedbacks/_feedback.html" %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	{% endblock %}

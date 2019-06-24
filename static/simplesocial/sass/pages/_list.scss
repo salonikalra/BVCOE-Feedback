@@ -1,0 +1,54 @@
+.list{
+
+  &__heading{
+    padding: 2rem 4rem;
+  }
+
+  .skew-color{
+    margin-top: -5rem;
+    padding: 10rem;
+    background-image: linear-gradient(
+          to right bottom,
+          rgba($color-pink, 0.8),
+          rgba($color-orange, 0.8)),
+      url(../img/college-small.jpg);
+      background-size: cover;
+      transform: skewY(-5deg);
+      min-height: 85vh;
+      overflow: hidden;
+
+      & > * {
+          transform: skewY(5deg);
+      }
+
+      @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+              only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+              only screen and (min-width: 125em) {
+          background-image: linear-gradient(
+              to right bottom,
+              rgba($color-pink, 0.8),
+              rgba($color-orange, 0.8)),
+          url(../img/college.jpg);
+      }
+
+      @include respond(phone){
+        background-attachment: fixed;
+      }
+
+      .container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        grid-gap: 5rem;
+        justify-items: center;
+        justify-content: center;
+        overflow: hidden;
+        padding: 10rem 0;
+        margin-top: -10rem;
+
+        @include respond(big-desktop) {
+            padding-top: 5rem;
+        }
+
+      }
+  }
+}

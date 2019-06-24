@@ -1,0 +1,42 @@
+.detail{
+
+  @media only screen and (min-height: 40em){
+    @include absCenter;
+  }
+
+  @include respond(tab-port) {
+    padding: 2rem 4rem;
+  }
+
+  margin: 0 auto;
+  width: 70%;
+  font-size: $default-font-size;
+
+  @include respond(tab-land) {
+      width: 82%;
+  }
+
+  @include respond(tab-port) {
+      width: 100%;
+  }
+
+  &__param{
+    border-bottom: 2px solid $color-grey-light-1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span{
+      font-size: 1.6rem;
+      margin-left: 3rem;
+      font-weight: 300;
+    }
+  }
+
+  &__buttons{
+    a:not(:last-child){
+      margin-right: 2.4rem;
+    }
+  }
+
+}

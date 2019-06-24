@@ -1,0 +1,44 @@
+{% extends "feedbacks/feedback_base.html" %}
+
+{% load bootstrap3 %}
+
+{% block feedback_content %}
+
+<div class="form" id="create-update-form">
+	<h1 class="heading-secondary">{% if not form.instance.pk %}
+		Create feedback
+		{% endif %}</h1>
+	<form method="post" id="feedbackForm" data-teachers-url="{% url 'feedbacks:ajax_load_teachers' %}">
+
+		{% if messages %}
+			{% for message in messages %}
+				<p class="error_message">{{message}}</p>
+			{% endfor %}
+		{% endif %}
+
+		{% csrf_token %}
+		{{ form }}
+		<button type="submit" class="btn btn--color margin-top-medium">Submit</button>
+	</form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+  $("#id_subject").change(function () {
+    var url = $("#feedbackForm").attr("data-teachers-url");  // get the url of the `load_teachers` view
+    var subjectId = $(this).val();  // get the selected subject ID from the HTML input
+
+    $.ajax({                       // initialize an AJAX request
+      url: url,                    // set the url of the request (= localhost:8000/feedbacks/ajax/load-teachers/)
+      data: {
+        'subject': subjectId       // add the subject id to the GET parameters
+      },
+      success: function (data) {   // `data` is the return of the `load_teachers` view function
+        $("#id_teacher").html(data);  // replace the contents of the teacher input with the data that came from the server
+      }
+    });
+
+  });
+</script>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block content %}
+  <div class="form login">
+      <h1 class="heading-secondary">Login</h1>
+      <form method="POST">
+          {% csrf_token %}
+          {{ form }}
+          <button type="submit" class="btn btn--color margin-top-medium">Login</button>
+      </form>
+  </div>
+{% endblock %}
